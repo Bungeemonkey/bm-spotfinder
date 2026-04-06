@@ -61,6 +61,91 @@
         }
       }
     },
+    "privacy": {
+      "heading": "Datenschutzerklärung — Spotfinder von BungeeMonkey",
+      "lastUpdated": "Zuletzt aktualisiert: 5. April 2026",
+      "translationNote": "Diese Datenschutzerklärung ist in deutscher Sprache verbindlich. Eine englische Übersetzung dient nur zur Information.",
+      "sections": {
+        "controller": {
+          "title": "Verantwortlicher"
+        },
+        "overview": {
+          "title": "Überblick über verarbeitete Daten",
+          "intro": "Spotfinder ist darauf ausgelegt, so wenige Daten wie möglich zu erheben. Die folgende Tabelle fasst zusammen, was verarbeitet wird, wozu und wohin es übertragen wird.",
+          "table": {
+            "data": "Daten",
+            "purpose": "Zweck",
+            "recipient": "Drittanbieter",
+            "onDevice": "Auf Gerät gespeichert"
+          },
+          "entries": {
+            "location": "Ungefähre / präzise Standortdaten",
+            "locationPurpose": "Anzeige deiner Position auf der Karte und Sortierung nach Distanz",
+            "form": "Formularfelder für Spot-Empfehlungen (Name, Strasse, PLZ, Ort, Schwierigkeit, Seillänge, Freitext)",
+            "formPurpose": "Übermittlung eines neuen Bungee-Surf-Spots an BungeeMonkey zur Prüfung",
+            "crash": "Crashdiagnosen / anonyme Nutzung (automatisch durch Firebase SDK)",
+            "crashPurpose": "Crash-Reporting und anonyme Nutzungsstatistiken",
+            "no": "Nein"
+          }
+        },
+        "location": {
+          "title": "Standortdaten",
+          "collect": "Beim Öffnen der Karte bittet die App um Erlaubnis, auf deinen Gerätestandort zuzugreifen (\"Beim Verwenden der App\"). Deine Koordinaten werden ausschliesslich verwendet, um:",
+          "display": "Deine aktuelle Position auf der Karte anzuzeigen.",
+          "sort": "Nahegelegene Bungee-Surf-Spots nach Distanz zu sortieren.",
+          "where": "Dein Standort wird lokal auf dem Gerät durch das Google Maps SDK für iOS bzw. Google Play Services für Android verarbeitet, um die Karte darzustellen. Es gilt die Datenschutzerklärung von Google:",
+          "revoke": "Du kannst die Standortberechtigung jederzeit in den Geräteeinstellungen widerrufen (iOS: Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → Spotfinder; Android: Einstellungen → Apps → Spotfinder → Berechtigungen → Standort). Die App funktioniert weiterhin, Spots werden jedoch nicht nach Distanz sortiert und deine Position wird nicht angezeigt."
+        },
+        "form": {
+          "title": "Spot-Empfehlungsformular",
+          "line1": "Name des Spots, Adresse (Strasse, PLZ, Ort)",
+          "line2": "Schwierigkeitsgrad und Seillänge (aus vordefinierten Optionen)",
+          "line3": "Freitext-Kommentar (optional)",
+          "note": "Diese Angaben sind nicht mit deiner Identität verknüpft. Wir erfragen oder speichern beim Absenden keine Kontaktangaben. Nach dem Absenden prüft BungeeMonkey die Information, bevor sie in der App veröffentlicht wird. Rechtsgrundlage (DSGVO Art. 6 Abs. 1 lit. b / CH DSG): Erfüllung der von dir gewünschten Leistung."
+        },
+        "firebase": {
+          "title": "Firebase-Dienste (Google)",
+          "firestore": "Cloud Firestore — speichert die öffentliche Spot-Datenbank sowie eingereichte Community-Empfehlungen.",
+          "sdk": "Firebase SDK — kann automatisch Gerätemodell, Betriebssystemversion, App-Version und anonyme Sitzungskennungen für Crash-Reporting und Analytics erfassen.",
+          "transfer": "Daten können an Google-Server in den USA übertragen werden. Google nimmt am EU–US Data Privacy Framework teil und stellt Standardvertragsklauseln zur Verfügung. Details:"
+        },
+        "maps": {
+          "title": "Google Maps",
+          "text": "Die App verwendet das Google Maps SDK (Google LLC) zur Anzeige interaktiver Karten. Beim Rendern kommuniziert dein Gerät mit Servern von Google, um Kartendaten zu laden und (bei erteilter Berechtigung) deine Position zu verarbeiten. Es gilt die Datenschutzerklärung von Google:"
+        },
+        "retention": {
+          "title": "Aufbewahrungsdauer",
+          "public": "Öffentliche Spot-Daten werden so lange aufbewahrt, wie die App betrieben wird.",
+          "community": "Community-Einreichungen werden bis zur Prüfung aufbewahrt und anschliessend entweder veröffentlicht oder gelöscht.",
+          "firebase": "Firebase Analytics / Crash-Daten werden gemäss den Standard-Aufbewahrungsrichtlinien von Google gespeichert (typischerweise 90 Tage für Analytics-Ereignisse)."
+        },
+        "rights": {
+          "title": "Deine Rechte",
+          "intro": "Nach Schweizer DSG (nDSG) und — soweit anwendbar — der DSGVO hast du folgende Rechte:",
+          "access": "Auskunft — eine Kopie der über dich gespeicherten Daten anzufordern.",
+          "rectification": "Berichtigung — unrichtige Daten korrigieren zu lassen.",
+          "erasure": "Löschung — die Löschung von Daten zu verlangen.",
+          "restriction": "Einschränkung — die Verarbeitung einschränken zu lassen.",
+          "portability": "Datenübertragbarkeit — deine Daten in einem maschinenlesbaren Format zu erhalten.",
+          "object": "Widerspruch — der Verarbeitung auf Grundlage berechtigter Interessen zu widersprechen.",
+          "complaint": "Beschwerde — beim EDÖB oder der zuständigen EU-Aufsichtsbehörde Beschwerde einzureichen.",
+          "note": "Da Einreichungen nicht mit deiner Identität verknüpft sind, können wir eine bestimmte Einreichung ohne zusätzliche Angaben von dir unter Umständen nicht auffinden.",
+          "spotErasureNote": "Spot-Empfehlungen, die noch nicht geprüft wurden, werden auf Anfrage gelöscht. Nach Prüfung und Veröffentlichung wird ein Spot Teil einer verifizierten Datenbank öffentlicher Orte. Der Inhalt eines veröffentlichten Spots (Name, Adresse, Schwierigkeit, Seillänge) beschreibt einen Ort, keine Person, und stellt daher keine personenbezogenen Daten dar, die dem Recht auf Löschung unterliegen.",
+          "contact": "Zur Ausübung deiner Rechte:"
+        },
+        "children": {
+          "title": "Kinderschutz",
+          "text": "Die App richtet sich nicht an Kinder unter 13 Jahren (bzw. 16 in der EU). Wir erheben wissentlich keine personenbezogenen Daten von Kindern. Wenn du glaubst, dass ein Kind Daten über die App übermittelt hat, kontaktiere uns bitte — wir löschen diese umgehend."
+        },
+        "changes": {
+          "title": "Änderungen dieser Erklärung",
+          "text": "Diese Datenschutzerklärung kann bei Änderungen an der App aktualisiert werden. Die aktualisierte Fassung wird unter der in den App Stores verlinkten URL veröffentlicht; das Datum \"Zuletzt aktualisiert\" oben wird angepasst. Durch die weitere Nutzung der App akzeptierst du die Änderungen."
+        },
+        "contact": {
+          "title": "Kontakt"
+        }
+      }
+    },
     "difficulties": {
       "beginner": "Einsteiger",
       "expert": "Experte",
@@ -80,6 +165,7 @@
     },
     "navigation": {
       "contact": "Kontakt",
+      "privacy": "Datenschutz",
       "language": "Sprache",
       "map": "Karte",
       "newSpot": "Spot empfehlen",

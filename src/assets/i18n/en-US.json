@@ -61,6 +61,91 @@
         }
       }
     },
+    "privacy": {
+      "heading": "Privacy Policy — Spotfinder by BungeeMonkey",
+      "lastUpdated": "Last updated: April 5, 2026",
+      "translationNote": "This privacy policy is provided in German as the binding version. An English translation is for information only.",
+      "sections": {
+        "controller": {
+          "title": "Controller"
+        },
+        "overview": {
+          "title": "Overview of data processed",
+          "intro": "Spotfinder is designed to collect as little data as possible. The table below summarises what is processed, why, and where it goes.",
+          "table": {
+            "data": "Data",
+            "purpose": "Purpose",
+            "recipient": "Third-party recipient",
+            "onDevice": "Stored on device"
+          },
+          "entries": {
+            "location": "Approximate / precise location",
+            "locationPurpose": "Show your position on the map and sort spots by distance",
+            "form": "Spot recommendation form fields (spot name, street, ZIP, city, difficulty, rope length, free-text comment)",
+            "formPurpose": "Submit a new bungee-surf spot to BungeeMonkey for review",
+            "crash": "Crash diagnostics / anonymous usage (automatically collected by Firebase SDK)",
+            "crashPurpose": "Crash reporting and anonymous usage analytics",
+            "no": "No"
+          }
+        },
+        "location": {
+          "title": "Location data",
+          "collect": "When you open the map, the app requests permission to access your device location (While Using the App). Your coordinates are used solely to:",
+          "display": "Display your current position on the map.",
+          "sort": "Sort nearby bungee-surf spots by distance.",
+          "where": "Your location is processed locally on device by the Google Maps SDK for iOS / Google Play Services for Android in order to render the map. Google's privacy policy applies:",
+          "revoke": "You can revoke location permission at any time in your device settings. The app will continue to work without location; spots will not be sorted by distance and your position will not appear on the map."
+        },
+        "form": {
+          "title": "Spot recommendation form",
+          "line1": "Spot name, street address, ZIP code, city",
+          "line2": "Difficulty level and rope length (selected from predefined options)",
+          "line3": "Free-text comment (optional)",
+          "note": "This data is not linked to your identity. We do not ask for, or store, your contact details as part of the form submission. After submission, BungeeMonkey staff review the information before publishing it in the app. Legal basis (GDPR Art. 6 para. 1 lit. b / Swiss FADP): to fulfil the service you requested."
+        },
+        "firebase": {
+          "title": "Firebase services (Google)",
+          "firestore": "Cloud Firestore — stores the public spot database and submitted community recommendations.",
+          "sdk": "Firebase SDK — may automatically collect device model, OS version, app version, and anonymous session identifiers for crash reporting and analytics.",
+          "transfer": "Data may be transferred to Google servers in the USA. Google participates in the EU–U.S. Data Privacy Framework and provides Standard Contractual Clauses. Details:"
+        },
+        "maps": {
+          "title": "Google Maps",
+          "text": "The app uses the Google Maps SDK (Google LLC) to display interactive maps. When the map is rendered, your device communicates with Google's servers to download map tiles and (if location permission is granted) to process your position. Google's privacy policy applies:"
+        },
+        "retention": {
+          "title": "Data retention",
+          "public": "Public spot data is retained indefinitely as long as the app is live.",
+          "community": "Community submissions are retained until reviewed and then either published or deleted.",
+          "firebase": "Firebase analytics / crash data is retained according to Google's standard Firebase data retention policies (typically 90 days for analytics events)."
+        },
+        "rights": {
+          "title": "Your rights",
+          "intro": "Under the Swiss Federal Act on Data Protection (FADP) and — where applicable — the EU General Data Protection Regulation (GDPR), you have the right to:",
+          "access": "Access — request a copy of data we hold about you.",
+          "rectification": "Rectification — ask us to correct inaccurate data.",
+          "erasure": "Erasure — ask us to delete data about you.",
+          "restriction": "Restriction — ask us to limit how we process your data.",
+          "portability": "Data portability — receive your data in a machine-readable format.",
+          "object": "Object — object to processing based on legitimate interests.",
+          "complaint": "Lodge a complaint — with the Swiss FDPIC or your EU member state's authority.",
+          "note": "Because submissions are not linked to your identity, we may not be able to locate a specific submission without additional context from you.",
+          "spotErasureNote": "Submitted spot recommendations that have not yet been reviewed are deleted on request. Once a spot has been reviewed and published, it becomes part of a verified database of public locations. The content of a published spot (name, address, difficulty, rope length) describes a place, not a person, and therefore does not constitute personal data subject to the right of erasure.",
+          "contact": "To exercise any right, contact us:"
+        },
+        "children": {
+          "title": "Children's privacy",
+          "text": "The app is not directed at children under 13 (or 16 in the EU). We do not knowingly collect personal data from children. If you believe a child has submitted data through the app, please contact us and we will delete it promptly."
+        },
+        "changes": {
+          "title": "Changes to this policy",
+          "text": "We may update this privacy policy when the app changes. The updated policy will be published at the URL linked in the app stores, and the Last updated date at the top will change. Continued use of the app after changes constitutes acceptance."
+        },
+        "contact": {
+          "title": "Contact"
+        }
+      }
+    },
     "difficulties": {
       "beginner": "Beginner",
       "expert": "Expert",
@@ -80,6 +165,7 @@
     },
     "navigation": {
       "contact": "Contact",
+      "privacy": "Privacy",
       "language": "Language",
       "map": "Map",
       "newSpot": "Recommend a spot",

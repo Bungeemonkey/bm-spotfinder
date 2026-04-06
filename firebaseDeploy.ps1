@@ -15,3 +15,4 @@ else
   firebase deploy --only hosting:test
   $index_file_content | Out-File -encoding utf8 src\index.html
 }
+ü

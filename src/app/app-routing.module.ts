@@ -18,6 +18,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./contact/contact.module').then((m) => m.ContactModule),
   },
+  {
+    path: 'privacy',
+    loadChildren: () =>
+      import('./privacy/privacy.module').then((m) => m.PrivacyModule),
+  },
   { path: '', redirectTo: 'map', pathMatch: 'full' },
 ];
 
