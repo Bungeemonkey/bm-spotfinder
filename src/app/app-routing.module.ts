@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {privacyLangGuard} from "../guards/language-param-guard.guard";
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'privacy',
+    canActivate: [privacyLangGuard],
     loadChildren: () =>
       import('./privacy/privacy.module').then((m) => m.PrivacyModule),
   },

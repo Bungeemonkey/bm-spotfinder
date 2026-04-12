@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: check if the caller is an active reviewer
+    function isReviewer() {
+      return request.auth != null &&
+             exists(/databases/$(database)/documents/reviewers/$(request.auth.token.email)) &&
+             get(/databases/$(database)/documents/reviewers/$(request.auth.token.email)).data.active == true;
+    }
+
+    // ── Spot collections ────────────────────────────────────────────
+
+    // Dev collection (used by bm-spotfinder-dev)
+    match /bm-surfspots-dev/{spotId} {
+      allow read: if true;
+      allow write: if isReviewer();
+    }
+
+    // Production collection (used by bm-surfspots main app)
+    match /bm-surfspots/{spotId} {
+      allow read: if true;
+      allow write: if isReviewer();
+    }
+
+    // ── Community submissions ───────────────────────────────────────
+    // Public create (anyone can submit), reviewer read/update/delete
+    match /user-proposed-surfspots/{spotId} {
+      allow create: if true;
+      allow read, update, delete: if isReviewer();
+    }
+
+    // ── Hydro data ──────────────────────────────────────────────────
+    // Public read (main app + reviewer). Writes are made by the Cloud
+    // Function via the Admin SDK, which bypasses these rules entirely —
+    // the 'request.auth != null' write rule below is therefore only a
+    // safety net for any future client-side write attempts.
+    match /bm-hydro-data-sources/{sourceId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    match /bm-water-levels/{levelId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // ── Reviewers allowlist ─────────────────────────────────────────
+    // Each reviewer can read only their own document.
+    // Managed exclusively via Firebase Console or Admin SDK.
+    match /reviewers/{email} {
+      allow read: if request.auth != null && request.auth.token.email == email;
+      allow write: if false;
+    }
+  }
+}
