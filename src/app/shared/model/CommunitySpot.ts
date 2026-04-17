@@ -7,6 +7,7 @@ export interface CommunitySpot {
   address2: string;
   coords: LatLngLiteral;
   bmSpotInfo: BmCommunitySpotInfo;
+  status: 'pending' | 'approved' | 'rejected';
 }
 
 export interface BmCommunitySpotInfo {

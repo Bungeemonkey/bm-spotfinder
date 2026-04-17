@@ -123,6 +123,7 @@ export class CommunitySpotComponent implements AfterViewInit {
         ropeLength: selectedRopeLength,
         additionalInfo: additionalInfo,
       },
+      status: 'pending',
     };
   }
 

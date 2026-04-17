@@ -10,6 +10,7 @@ export class CommunitySpotService {
   constructor(private firestore: Firestore) {}
 
   saveSpot(spot: CommunitySpot) {
+    spot.status = 'pending';
     let persistRef = this._persistInFirestore.bind(this, spot);
     let errorRef = this._handlePlaceSearchFail.bind(this, spot);
     return this._determinePlaceId(spot).catch(errorRef).then(persistRef);
@@ -17,11 +18,11 @@ export class CommunitySpotService {
 
   private _persistInFirestore(spot: CommunitySpot): Promise<void> {
     return new Promise((resolve, reject) => {
-      let waterLevelsCollection = collection(
+      let communitySpotCollectionRef = collection(
         this.firestore,
-        environment.spotCollectionName
+        environment.communitySpotCollectionName
       );
-      addDoc(waterLevelsCollection, Object.assign({}, spot)).then(
+      addDoc(communitySpotCollectionRef, Object.assign({}, spot)).then(
         () => resolve(),
         reject
       );
