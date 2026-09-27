@@ -81,9 +81,6 @@
             },
             "development": {
               "outputPath": "dist/bm-spotfinder-local",
-              "index": {
-                "input": "src/index.local.html"
-              },
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
