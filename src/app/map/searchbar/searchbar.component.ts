@@ -16,6 +16,9 @@ import {
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { SpotFilter } from '../../shared/model/SpotFilter';
 import { PlaceSearchResult } from '../../shared/model/PlaceSearchResult';
+// Type-only import: the package's `exports` field does not expose this deep path
+// at runtime, and the widget only ever reads the plain properties off the object.
+import type { Options } from 'ngx-google-places-autocomplete-esb/lib/objects/options/options';
 
 @Component({
   selector: 'map-searchbar',
@@ -44,10 +47,13 @@ export class SearchbarComponent implements OnInit {
 
   ropeLengthOptions: RopeLength[] = AVAILABLE_ROPE_LENGTHS;
   difficultyOptions: SpotDifficultyLevel[] = SPOT_DIFFICULTIES;
-  // readonly npxPlaceSearchAutocompleteOptions: Options = new Options({
-  //   types: ['geocode'],
-  //   fields: ['place_id', 'formatted_address', 'geometry.location']
-  // });
+  // Restricting `fields` keeps the widget's Place Details call on the Basic data
+  // SKU. Without it the widget requests every field and bills Contact +
+  // Atmosphere data per session, none of which we read.
+  readonly npxPlaceSearchAutocompleteOptions = {
+    types: ['geocode'],
+    fields: ['place_id', 'formatted_address', 'geometry.location'],
+  } as Options;
 
   mapPlaceSearchControl: UntypedFormControl;
   surfSpotFilterControl: UntypedFormGroup;

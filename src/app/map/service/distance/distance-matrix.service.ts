@@ -13,6 +13,13 @@ import { concat, from, map, Observable, of, tap } from 'rxjs';
 export class DistanceMatrixService {
   private service: google.maps.DistanceMatrixService;
   private readonly BM_SPOT_CACHE_DISTANCE = 'bm-swd_';
+  /**
+   * Decimal places kept in the cache key. Geolocation returns slightly different
+   * raw coordinates on every read, so keying on them never hits the cache across
+   * reloads. 3 decimals buckets origins to roughly 110m, which is well below the
+   * granularity at which a driving distance to a spot meaningfully changes.
+   */
+  private readonly CACHE_KEY_COORDINATE_PRECISION = 3;
 
   constructor() {
     this.service = new google.maps.DistanceMatrixService();
@@ -21,7 +28,14 @@ export class DistanceMatrixService {
   private spotDistance = (spot: SurfSpot) =>
     spot.distanceToCurrentLocation?.value ?? Number.MAX_SAFE_INTEGER;
   private toLocalStorageKey = (coords: GoogleCoordinates) =>
-    this.BM_SPOT_CACHE_DISTANCE + coords.lng + ':' + coords.lat;
+    this.BM_SPOT_CACHE_DISTANCE +
+    this.toCacheKeyCoordinate(coords.lng) +
+    ':' +
+    this.toCacheKeyCoordinate(coords.lat);
+  private toCacheKeyCoordinate = (coordinate: number | (() => number)) =>
+    (typeof coordinate === 'function' ? coordinate() : coordinate).toFixed(
+      this.CACHE_KEY_COORDINATE_PRECISION
+    );
 
   public getDisplayTitleIncludingDistance(spot: SurfSpot) {
     let result = spot.title;

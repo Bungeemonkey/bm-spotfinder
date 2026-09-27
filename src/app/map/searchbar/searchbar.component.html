@@ -22,12 +22,12 @@
           <input
             ngx-google-places-autocomplete
             #placesRef="ngx-places"
+            [options]="npxPlaceSearchAutocompleteOptions"
             (onAddressChange)="onPlaceFoundBasedOnSearch($event)"
             aria-label="Place search"
             matInput
             [placeholder]="'i18n.spot-search.places-placeholder' | translate"
             type="text"/>
-          <!-- [options]="npxPlaceSearchAutocompleteOptions" L24-->
         </mat-form-field>
       </div>
       <form [formGroup]="surfSpotFilterControl" id="filter-form">
